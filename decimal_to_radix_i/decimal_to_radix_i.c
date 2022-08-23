@@ -52,8 +52,8 @@ int main() {
 	return 0;
 }
 
-void Dec2RadixI(int decValue, int radValue) {
-	char char_set[] = "0123456789ABCDEF";
+void Dec2RadixI(unsigned int decValue, int radValue) {
+	static const char char_set[] = "0123456789ABCDEF";
 	char output[100];
 	if ((radValue % 2)) {
 		int iterations = ceil(log(decValue) / log(radValue));
@@ -65,8 +65,24 @@ void Dec2RadixI(int decValue, int radValue) {
 		output[iterations] = '\0';
 	}
 	else {
-		//
+		int it = log2(radValue);
+		int iterations = floor(log2(decValue) / log2(radValue))+1;
+		for (int i = 0; i < iterations; i++) {
+			int current = decValue & (radValue - 1);
+			decValue = decValue >> it;
+			output[iterations - i - 1] = char_set[current];
+		}
+
+		/*
+		int num = ceil(log(decValue) / log(radValue));
+		int it = log2(radValue);		//not correct
+		for (int i = 0; i < num; i++) {
+			int current = decValue & (it + it - 1);
+			decValue = decValue >> it;//it;
+			output[num - i - 1] = char_set[current];
+		}*/
+		output[iterations] = '\0';
 	}
 
-	printf("%s", output);
+	printf("%s\n", output);
 }
