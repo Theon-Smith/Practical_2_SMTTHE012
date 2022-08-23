@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <math.h>
+#include <stdbool.h>
 
 // 2.5b
 #define TITLE	"******************************\n"\
@@ -13,6 +14,7 @@
 
 // 2.5i 
 void Dec2RadixI(int decValue, int radValue);
+void clear_buffer();
 
 int main() {
 	// 2.5a
@@ -21,19 +23,34 @@ int main() {
 	// 2.5c
 	int32_t input;
 	int32_t radix;
-	do {		
+	while (true) {
 		printf("Enter a decimal number: ");		// request number for conversion
-		int error = scanf("%u", &input);		// u or d?
+		int error = scanf("%u", &input);	
+		if (error == 0) {
+			printf("Invalid input\n");
+			clear_buffer();
+			continue;
+		}
+		if (input < 0) {
+			break;
+		}
 		printf("The number you have entered is %d\n", input);
-		//printf("errorval:%d", error);			// TODO: sort out the error
 
 		// 2.5d & 2.5e	
 		printf("Enter a radix for the converter between 2 and 16: ");
 		error = scanf("%d", &radix);
-		printf("The radix you have entered is %d\n", radix); // TODO: handle error and uint8_t
+		if (error == 0) {
+			printf("Invalid input\n");
+			clear_buffer();
+			continue;
+		}
+		if (radix < 0) {
+			break;
+		}
+		printf("The radix you have entered is %d\n", radix);
 
 		// 2.5 f
-		float shannons = log2(input);
+		float shannons = log2f((float)input);
 		printf("The log2 of the numer is %.2f\n", shannons);
 
 		// 2.5g
@@ -44,22 +61,21 @@ int main() {
 		int remainder = input - int_div * radix;
 		printf("The remainder is %d\n", remainder);
 
-		// 2.5i call
+		// 2.5i call conversion function
 		Dec2RadixI(input, radix);
-
-	} while ((radix > 0));
+	}
 	printf("EXIT");
 	return 0;
 }
 
-void Dec2RadixI(unsigned int decValue, int radValue) {
+void Dec2RadixI(int decValue, int radValue) {
 	static const char char_set[] = "0123456789ABCDEF";
 	char output[100];
 	if ((radValue % 2)) {
 		int iterations = ceil(log(decValue) / log(radValue));
 		for (int i = iterations; i > 0; i--) {
 			int current = decValue / pow(radValue, i - 1);
-			decValue -= current * pow(radValue, i - 1);
+			decValue -= current * (int)pow(radValue, i - 1);
 			output[iterations - i] = char_set[current];
 		}
 		output[iterations] = '\0';
@@ -72,17 +88,14 @@ void Dec2RadixI(unsigned int decValue, int radValue) {
 			decValue = decValue >> it;
 			output[iterations - i - 1] = char_set[current];
 		}
-
-		/*
-		int num = ceil(log(decValue) / log(radValue));
-		int it = log2(radValue);		//not correct
-		for (int i = 0; i < num; i++) {
-			int current = decValue & (it + it - 1);
-			decValue = decValue >> it;//it;
-			output[num - i - 1] = char_set[current];
-		}*/
 		output[iterations] = '\0';
 	}
 
 	printf("%s\n", output);
+}
+
+void clear_buffer() {
+	while (getchar() != '\n') {
+		continue;
+	}
 }

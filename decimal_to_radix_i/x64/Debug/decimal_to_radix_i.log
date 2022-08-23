@@ -1,9 +1,6 @@
 ﻿  decimal_to_radix_i.c
-T:\UCT_(T_T)\2022\EEE2046S\Practicals\Prac_2\Code\Practical_2_SMTTHE012\decimal_to_radix_i\decimal_to_radix_i.c(36,20): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-T:\UCT_(T_T)\2022\EEE2046S\Practicals\Prac_2\Code\Practical_2_SMTTHE012\decimal_to_radix_i\decimal_to_radix_i.c(55,30): warning C4028: formal parameter 1 different from declaration
-T:\UCT_(T_T)\2022\EEE2046S\Practicals\Prac_2\Code\Practical_2_SMTTHE012\decimal_to_radix_i\decimal_to_radix_i.c(62,24): warning C4244: '-=': conversion from 'double' to 'unsigned int', possible loss of data
-T:\UCT_(T_T)\2022\EEE2046S\Practicals\Prac_2\Code\Practical_2_SMTTHE012\decimal_to_radix_i\decimal_to_radix_i.c(59,20): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-T:\UCT_(T_T)\2022\EEE2046S\Practicals\Prac_2\Code\Practical_2_SMTTHE012\decimal_to_radix_i\decimal_to_radix_i.c(61,27): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-T:\UCT_(T_T)\2022\EEE2046S\Practicals\Prac_2\Code\Practical_2_SMTTHE012\decimal_to_radix_i\decimal_to_radix_i.c(68,12): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-T:\UCT_(T_T)\2022\EEE2046S\Practicals\Prac_2\Code\Practical_2_SMTTHE012\decimal_to_radix_i\decimal_to_radix_i.c(69,58): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+T:\UCT_(T_T)\2022\EEE2046S\Practicals\Prac_2\Code\Practical_2_SMTTHE012\decimal_to_radix_i\decimal_to_radix_i.c(75,20): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+T:\UCT_(T_T)\2022\EEE2046S\Practicals\Prac_2\Code\Practical_2_SMTTHE012\decimal_to_radix_i\decimal_to_radix_i.c(77,27): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+T:\UCT_(T_T)\2022\EEE2046S\Practicals\Prac_2\Code\Practical_2_SMTTHE012\decimal_to_radix_i\decimal_to_radix_i.c(84,12): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+T:\UCT_(T_T)\2022\EEE2046S\Practicals\Prac_2\Code\Practical_2_SMTTHE012\decimal_to_radix_i\decimal_to_radix_i.c(85,58): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
   decimal_to_radix_i.vcxproj -> T:\UCT_(T_T)\2022\EEE2046S\Practicals\Prac_2\Code\Practical_2_SMTTHE012\decimal_to_radix_i\x64\Debug\decimal_to_radix_i.exe
